@@ -1,0 +1,168 @@
+{
+  "name": "订阅支出追踪器",
+  "description": "管理订阅服务和支付记录，以及查看总支出和即将到期的订阅",
+  "entities": [
+    {
+      "name": "subscription",
+      "displayName": "订阅服务",
+      "columns": [
+        {
+          "name": "id",
+          "type": "text",
+          "required": true,
+          "unique": true,
+          "primaryKey": true
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "required": true,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "price",
+          "type": "number",
+          "required": true,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "billingCycle",
+          "type": "text",
+          "required": true,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "isEnabled",
+          "type": "boolean",
+          "required": true,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "websiteLink",
+          "type": "url",
+          "required": false,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "created_at",
+          "type": "date",
+          "required": true
+        },
+        {
+          "name": "updated_at",
+          "type": "date",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "paymentRecord",
+      "displayName": "支付记录",
+      "columns": [
+        {
+          "name": "id",
+          "type": "text",
+          "required": true,
+          "unique": true,
+          "primaryKey": true
+        },
+        {
+          "name": "subscriptionId",
+          "type": "text",
+          "required": true,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "amount",
+          "type": "number",
+          "required": true,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "paymentDate",
+          "type": "date",
+          "required": true,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "paymentStatus",
+          "type": "text",
+          "required": true,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "created_at",
+          "type": "date",
+          "required": true
+        },
+        {
+          "name": "updated_at",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "subscriptionList",
+      "type": "list",
+      "entity": "subscription",
+      "title": "订阅服务列表",
+      "description": "查看所有订阅服务"
+    },
+    {
+      "name": "subscriptionForm",
+      "type": "form",
+      "entity": "subscription",
+      "title": "添加/编辑订阅服务",
+      "description": "添加或编辑订阅服务信息"
+    },
+    {
+      "name": "subscriptionDetail",
+      "type": "detail",
+      "entity": "subscription",
+      "title": "订阅服务详情",
+      "description": "查看订阅服务的详细信息"
+    },
+    {
+      "name": "paymentRecordList",
+      "type": "list",
+      "entity": "paymentRecord",
+      "title": "支付记录列表",
+      "description": "查看所有支付记录"
+    },
+    {
+      "name": "paymentRecordForm",
+      "type": "form",
+      "entity": "paymentRecord",
+      "title": "添加/编辑支付记录",
+      "description": "添加或编辑支付记录"
+    },
+    {
+      "name": "paymentRecordDetail",
+      "type": "detail",
+      "entity": "paymentRecord",
+      "title": "支付记录详情",
+      "description": "查看支付记录的详细信息"
+    },
+    {
+      "name": "dashboard",
+      "type": "dashboard",
+      "entity": "",
+      "title": "仪表板",
+      "description": "显示总支出和即将到期的订阅"
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2025-07-23T02:11:49.512Z"
+}

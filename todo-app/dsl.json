@@ -1,0 +1,70 @@
+{
+  "name": "待办事项应用",
+  "description": "一个用于追踪待办事项的简单应用，包括任务名称、完成状态和创建时间。",
+  "entities": [
+    {
+      "name": "task",
+      "displayName": "任务",
+      "columns": [
+        {
+          "name": "id",
+          "type": "number",
+          "required": true,
+          "unique": true,
+          "primaryKey": true
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "required": true,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "completed",
+          "type": "boolean",
+          "required": true,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "created_at",
+          "type": "date",
+          "required": true,
+          "unique": false,
+          "primaryKey": false
+        },
+        {
+          "name": "updated_at",
+          "type": "date",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "task_list",
+      "type": "list",
+      "entity": "task",
+      "title": "任务列表",
+      "description": "展示所有待办事项的列表"
+    },
+    {
+      "name": "task_form",
+      "type": "form",
+      "entity": "task",
+      "title": "任务表单",
+      "description": "用于添加或编辑待办事项的表单"
+    },
+    {
+      "name": "task_detail",
+      "type": "detail",
+      "entity": "task",
+      "title": "任务详情",
+      "description": "展示待办事项的详细信息"
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2025-07-23T02:13:08.654Z"
+}
