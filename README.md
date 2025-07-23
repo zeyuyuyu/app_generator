@@ -78,6 +78,8 @@ cd backend && pip install -r requirements.txt && python main.py &
 cd ../frontend && npm install && npm run dev
 ```
 
+> 💡 **需要更详细的部署指南？** 请查看 [**部署使用指南**](DEPLOYMENT.md)，包含Docker部署、生产环境配置、故障排除等完整内容。
+
 ## 📖 详细使用指南
 
 ### 输入格式示例
@@ -397,6 +399,12 @@ npm test
 ## 📝 许可证
 
 MIT License - 详见 [LICENSE](LICENSE) 文件
+
+## 📚 详细文档
+
+- 📖 **[部署使用指南](DEPLOYMENT.md)** - 完整的安装配置和部署指南
+- 🎨 **[GUI使用指南](GUI使用指南.md)** - Web界面使用说明
+- ✅ **[验证报告](验证报告.md)** - 功能验证和测试结果
 
 ## 🙏 致谢
 
